@@ -1,12 +1,14 @@
 #include<stdio.h>
 
 /**
- * 
+ * main - start point
  *
- * return: 0
+ * description: program prints a string
+ *
+ * return: zero
  */
 int main(void)
 {
 	puts("\"Programming is like building a multilingual puzzle");
-	return (0);
+	return ();
 }
