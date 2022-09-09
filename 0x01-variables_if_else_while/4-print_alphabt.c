@@ -18,12 +18,10 @@ int main(void)
 		if (alphabet == 'e')
 		{
 			alphabet++;
-			alphabet++;
 		}
 		else if (alphabet == 'q')
 		{
-			alphabet ++;
-			alphabet ++;
+			alphabet++;
 		}
 		else
 		{
