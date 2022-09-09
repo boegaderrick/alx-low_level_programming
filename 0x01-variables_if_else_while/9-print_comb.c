@@ -14,9 +14,13 @@ int main(void)
 
 	num = '0';
 
-	while (num <= 9)
+	while (num <= '9')
 	{
-		for (num)
+		if (num == '9')
+		{
+			return (0);
+		}
+		else
 		{
 			putchar(num);
 			printf(",");
