@@ -16,7 +16,7 @@ int main(void)
 
 	while (base <= '9')
 	{
-		printf("%d%", base);
+		printf(base);
 		base++;
 	}
 	return (0);
