@@ -15,9 +15,15 @@ int main(void)
 
 	while (alphabet <= 'z')
 	{
-		if (alphabet == 'e', 'q')
+		if (alphabet == 'e')
 		{
-			alphabet ++2;
+			alphabet++;
+			alphabet++;
+		}
+		else if (alphabet == 'q')
+		{
+			alphabet ++;
+			alphabet ++;
 		}
 		else
 		{
