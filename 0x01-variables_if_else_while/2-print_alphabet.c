@@ -9,7 +9,9 @@
 
 int main(void)
 {
-	char alphabet; 'a'
+	char alphabet;
+
+	alphabet = 'a'
 
 	while (alphabet <= 'z')
 	{
