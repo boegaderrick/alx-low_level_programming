@@ -18,6 +18,7 @@ int main(void)
 	{
 		if (num == '9')
 		{
+			putchar(num);
 			return (0);
 		}
 		else
