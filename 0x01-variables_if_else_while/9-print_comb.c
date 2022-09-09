@@ -16,7 +16,7 @@ int main(void)
 
 	while (num <= 9)
 	{
-		for num
+		for (num)
 		{
 			putchar(num);
 			printf(",");
