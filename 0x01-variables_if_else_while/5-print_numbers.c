@@ -16,7 +16,7 @@ int main(void)
 
 	while (base <= '9')
 	{
-		printf(base);
+		putchar(base);
 		base++;
 	}
 	return (0);
