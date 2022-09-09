@@ -24,7 +24,7 @@ int main(void)
 		else
 		{
 			putchar(num);
-			printf(",");
+			printf(", ");
 			num++;
 		}
 	}
