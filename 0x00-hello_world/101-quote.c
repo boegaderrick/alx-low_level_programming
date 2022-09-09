@@ -1,9 +1,7 @@
 #include<unistd.h>
 
-/*
+/**
  * main - entry point
- *
- * write: error
  *
  * Return: 0
  */
