@@ -3,6 +3,8 @@
 /*
  * main - entry point
  *
+ * write: error
+ *
  * Return: 0
  */
 int main(void)
