@@ -16,21 +16,15 @@ int main(void)
 	{
 		for (num2 = num1 + 1; num2 < 10; num2++)
 		{
-			if (num1 <= 8 && num2 <= 9)
-			{
-				if (num1 < 8 && num2 < 9)
-				{
-					putchar((num1 % 10) + '0');
-					putchar((num2 % 10) + '0');
-					putchar(',');
-					putchar(' ');
-				}
-				else if (num1 == 8 && num2 == 9)
-				{
-					putchar((num1 % 10) + '0');
-					putchar((num2 % 10) + '0');
-				}
-			}
+			putchar((num1 % 10) + '0');
+			putchar((num2 % 10) + '0');
+
+			if (num1 == 8 && num2 == 9)
+				continue;
+
+			putchar(',');
+			putchar(' ');
+
 		}
 	}
 
