@@ -1,20 +1,12 @@
 #include<main.h>
 
 /**
- * main - program entry point
+ * print_alphabet - alphabet function
  *
- * mainfunc: calls print_alphabet
- *
- * print_alphabet: prints alphabet
+ * description: prints alphabet
  *
  * Return: 0
  */
-
-int main(void)
-{
-	print_alphabet();
-	return (0);
-}
 
 void print_alphabet(void)
 {
@@ -26,5 +18,19 @@ void print_alphabet(void)
 		alphabet++;
 	}
 	putchar('\n');
+	return (0);
+}
+
+/**
+* main - entry point
+* 
+* Description: calls print_alphabet
+*
+* Return: 0
+*/
+
+int main(void)
+{
+	print_alphabet();
 	return (0);
 }
