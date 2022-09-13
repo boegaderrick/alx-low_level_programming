@@ -7,7 +7,7 @@
  * Return: 0
  */
 
-char main(void)
+int main(void)
 {
 	printf("_putchar\n");
 	return (0);
