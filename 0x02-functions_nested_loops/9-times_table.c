@@ -36,8 +36,8 @@ void times_table(void)
 				_putchar((prod % 10) + '0');
 			}
 			col++;
-			row++;
 		}
+		row++;
 		_putchar('\n');
 	}
 }
