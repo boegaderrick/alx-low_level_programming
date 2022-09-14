@@ -22,6 +22,8 @@ void print_alphabet_x10(void)
 		}
 		line_count++;
 		_putchar('\n');
-		char alphabet = 'a';
+
+		alphabet = 'a';
+	
 	}
 }
