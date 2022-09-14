@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <math.h>
 
 /***/
 
@@ -11,7 +12,7 @@ int main(void)
 	{
 		if ((n % 3 == 0) || (n % 5 == 0))
 		{
-			sum = sum + n;
+			sum += n;
 		}
 		else
 		{
