@@ -5,7 +5,7 @@
  *
  * Description: checks absolute value
  *
- * @int: number to be checked
+ * @i: number to be checked
  *
  * Return: 0
  */
@@ -14,11 +14,10 @@ int _abs(int i)
 {
 	if (i >= 0)
 	{
-		_putchar(i);
+		return (i);
 	}
 	else
 	{
-		_putchar(-i);
+		return (-i);
 	}
-	return (0);
 }
