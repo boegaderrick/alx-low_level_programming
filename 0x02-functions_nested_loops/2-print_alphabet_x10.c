@@ -13,9 +13,9 @@ void print_alphabet_x10(void)
 	char alphabet = 'a';
 	int line_count = 0;
 
-	while (line_count <= 10);
+	while (line_count <= 10)
 	{
-		while (alphabet <= 'z');
+		while (alphabet <= 'z')
 		{
 			_putchar(alphabet);
 			alphabet++;
