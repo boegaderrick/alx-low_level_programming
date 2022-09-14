@@ -8,9 +8,9 @@ void times_table(void)
 {
 	int row, col, prod;
 
-	for (row = 0; row < 10; row++)
+	while (row < 10)
 	{
-		for (col = 0; col < 10; col++)
+		while (col < 10)
 		{
 			prod = row * col;
 			if (col == 0)
@@ -31,7 +31,9 @@ void times_table(void)
 				_putchar((prod / 10) + '0');
 				_putchar((prod % 10) + '0');
 			}
+			col++;
 		}
+		row++;
 		_putchar('\n');
 	}
 }
