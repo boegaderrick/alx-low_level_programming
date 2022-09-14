@@ -8,15 +8,10 @@ void times_table(void)
 {
 	int row, col, prod;
 
-	row = 0;
-	col = 0;
-
-	while (row < 10)
+	for (row = 0; row < 10; row++;)
 	{
-		row++;
-		while (col < 10)
+		for (col = 0; col < 10; col++;)
 		{
-			col++;
 			prod = row * col;
 			if (col == 0)
 			{
