@@ -5,12 +5,12 @@
  *
  * Description: checks if char is lowercase
  *
- *Return: 1 or 0
+ * Return: 1 or 0
  */
 
 int _islower(int c)
 {
-	if (islower(int c))
+	if (c <= 'z')
 	{
 		return 1;
 	}
