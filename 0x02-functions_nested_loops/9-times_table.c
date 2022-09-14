@@ -18,14 +18,14 @@ void times_table(void)
 			prod = row * col;
 			if (col == 0)
 			{
-				_putchar(z);
+				_putchar(prod);
 			}
 			else if (prod < 10 && col != 0)
 			{
 				_putchar(',');
 				_putchar(' ');
 				_putchar(' ');
-				_putcahr(z);
+				_putcahr(prod);
 			}
 			else if (prod >= 10)
 			{
