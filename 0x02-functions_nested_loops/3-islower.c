@@ -5,7 +5,7 @@
  *
  * Description: checks if char is lowercase
  *
- * c: character to be checked
+ * @c: character to be checked
  *
  * Return: 1 or 0
  */
