@@ -13,7 +13,6 @@ void times_table(void)
 	while (row < 10)
 	{
 		col = 0;
-		row++;
 
 		while (col < 10)
 		{
@@ -37,6 +36,7 @@ void times_table(void)
 				_putchar((prod % 10) + '0');
 			}
 			col++;
+			row++;
 		}
 		_putchar('\n');
 	}
