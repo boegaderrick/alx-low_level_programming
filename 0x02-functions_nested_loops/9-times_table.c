@@ -8,9 +8,9 @@ void times_table(void)
 {
 	int row, col, prod;
 
-	for (row = 0; row < 10; row++;)
+	for (row = 0; row < 10; row++)
 	{
-		for (col = 0; col < 10; col++;)
+		for (col = 0; col < 10; col++)
 		{
 			prod = row * col;
 			if (col == 0)
