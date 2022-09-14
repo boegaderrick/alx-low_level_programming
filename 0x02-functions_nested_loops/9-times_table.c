@@ -9,10 +9,10 @@ void times_table(void)
 	int row, col, prod;
 
 	row = 0;
+	col = 0;
 
 	while (row < 10)
 	{
-		col = 0;
 
 		while (col < 10)
 		{
