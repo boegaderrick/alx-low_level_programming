@@ -21,3 +21,18 @@ void print_alphabet(void)
 	putchar('\n');
 	return;
 }
+
+/**
+* main - entry point
+* 
+* Description: calls print_alphabet
+*
+* Return: 0
+*/
+
+int main(void)
+{
+	void print_alphabet(void);
+	print_alphabet();
+	return (0);
+}
