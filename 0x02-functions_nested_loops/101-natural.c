@@ -1,7 +1,11 @@
 #include <stdio.h>
 #include <math.h>
 
-/***/
+/**
+ * main - finds the sum of multiples of two numbers
+ *
+ * Return: 0
+ */
 
 int main(void)
 {
@@ -13,10 +17,6 @@ int main(void)
 		if ((n % 3 == 0) || (n % 5 == 0))
 		{
 			sum += n;
-		}
-		else
-		{
-			continue;
 		}
 		n++;
 	}
