@@ -10,10 +10,8 @@
  * Return: 0
  */
 
-int _abs(int)
+int _abs(int i)
 {
-	_abs(i);
-
 	if (i >= 0)
 	{
 		_putchar(i);
