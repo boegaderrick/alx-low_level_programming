@@ -5,7 +5,7 @@
  *
  * description: prints alphabet
  *
- * Return: 0
+ * Return:
  */
 
 void print_alphabet(void)
@@ -18,9 +18,8 @@ void print_alphabet(void)
 		putchar (alphabet);
 		alphabet++;
 	}
-	print_alphabet = alphabet;
 	putchar('\n');
-	return (0);
+	return;
 }
 
 /**
