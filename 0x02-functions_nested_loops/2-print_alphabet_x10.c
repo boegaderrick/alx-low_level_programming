@@ -5,7 +5,7 @@
  *
  * Description: prints alphabet x10
  *
- * Return: 
+ * Return:
  */
 
 void print_alphabet_x10(void)
@@ -24,6 +24,5 @@ void print_alphabet_x10(void)
 		_putchar('\n');
 
 		alphabet = 'a';
-	
 	}
 }
