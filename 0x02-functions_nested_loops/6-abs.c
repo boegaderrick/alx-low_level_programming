@@ -5,6 +5,8 @@
  *
  * Description: checks absolute value
  *
+ * @int: number to be checked
+ *
  * Return: 0
  */
 
