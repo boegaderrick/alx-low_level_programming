@@ -1,5 +1,13 @@
 #include <stdio.h>
 
+/**
+ * main - entry point
+ *
+ * Description: prints 1-100, prints fizz/buzz/fizzbuzz for multiples of 5 & 3
+ *
+ * Return: 0
+ */
+
 int main(void)
 {
 	int i;
@@ -25,4 +33,5 @@ int main(void)
 
 	}
 	printf("\n");
+	return (0);
 }
