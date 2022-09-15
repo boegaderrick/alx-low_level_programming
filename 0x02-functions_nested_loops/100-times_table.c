@@ -2,6 +2,8 @@
 
 /**
  * print_times_table - function prints times table
+ *
+ * @n: input number
  */
 
 void print_times_table(int n)
@@ -12,11 +14,11 @@ void print_times_table(int n)
 
 	if ((n >= 0) && (n <= 15))
 	{
-		while (row < n)
+		while (row < (n += 1))
 		{
 			col = 0;
 
-			while (col < n)
+			while (col < (n += ))
 			{
 				prod = row * col;
 				if (col == 0)
