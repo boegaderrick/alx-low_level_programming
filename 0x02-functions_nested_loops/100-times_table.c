@@ -19,7 +19,7 @@ void print_times_table(int n)
 		{
 			col = 0;
 
-			while (col < (n += ))
+			while (col < (n += 1))
 			{
 				prod = row * col;
 				if (col == 0)
