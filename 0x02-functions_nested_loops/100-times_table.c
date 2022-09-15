@@ -1,22 +1,20 @@
 #include "main.h"
 /**
  * print_times_table - function prints times table
- * @n: input number 
+ * @n: input number
  */
 void print_times_table(int n)
 {	int row, col, prod;
 
 	row = 0;
 	if ((n >= 0) && (n <= 15))
-	{	
+	{
 		while (row <= n)
 		{	col = 0;
 			while (col <= n)
-			{
-				prod = row * col;
+			{	prod = row * col;
 				if (col == 0)
-				{	_putchar(prod + '0');
-				}
+				{	_putchar(prod + '0'); }
 				else if (prod < 10 && col != 0)
 				{	_putchar(',');
 					_putchar(' ');
@@ -25,7 +23,7 @@ void print_times_table(int n)
 					_putchar(prod + '0');
 				}
 				else if (prod >= 10)
-				{	
+				{
 					if (prod > 99)
 					{	_putchar(',');
 						_putchar(' ');
