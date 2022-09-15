@@ -1,9 +1,11 @@
 #include "main.h"
 
 /**
- * mul - multiplie inputs
+ * mul - multiply inputs
  *
- * @a, @b: inputs
+ * @a: input
+ *
+ * @b: input
  *
  * Return: product of the multiplication
  */
@@ -11,5 +13,6 @@
 int mul(int a, int b)
 {
 	int product = a * b;
+
 	return (product);
 }
