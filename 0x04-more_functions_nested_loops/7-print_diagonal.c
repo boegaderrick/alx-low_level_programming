@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * print_line - prints line
+ * print_diagonal - prints line
  *
  * @n: range to which to print
  */
@@ -28,5 +28,8 @@ void print_diagonal(int n)
 			_putchar('\n');
 		}
 	}
-	_putchar('\n');
+	else
+	{
+		_putchar('\n');
+	}
 }
