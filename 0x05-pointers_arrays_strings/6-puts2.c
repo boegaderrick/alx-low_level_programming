@@ -2,7 +2,7 @@
 
 /**
 * puts2 - prints every other instance
-* @s: parameter to be printed
+* @str: parameter to be printed
 */
 
 void puts2(char *str)
