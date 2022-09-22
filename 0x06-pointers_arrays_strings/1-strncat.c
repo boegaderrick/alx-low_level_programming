@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdio.h>
 
 /**
 * _strncat - concatenates two strings to a provided limit
@@ -27,8 +26,10 @@ char *_strncat(char *dest, char *src, int n)
 	if (src[n] > '\0')
 	{
 		dest[len1] = '\0';
+		return (dest);
 	}
 	else
-		;
-	return (dest);
+	{
+		return (dest);
+	}
 }
