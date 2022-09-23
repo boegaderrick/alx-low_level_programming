@@ -28,10 +28,10 @@ int _strcmp(char *s1, char *s2)
 	}
 	else if (len1 < len2)
 	{
-		return (-15);
+		return (-1);
 	}
 	else
 	{
-		return (15);
+		return (1);
 	}
 }
