@@ -4,7 +4,7 @@
 * _strcmp - compares size of two strings
 * @s1: string 1
 * @s2: string 2
-* Return: 0 if same, positive if str1 is greater or negative if str2 is greater
+* Return: 0 if same, positive if str1>  or negative if str2>
 */
 
 int _strcmp(char *s1, char *s2)
@@ -22,13 +22,13 @@ int _strcmp(char *s1, char *s2)
 	{
 		len2++;
 	}
-	if (len1 == len2)
-	{
-		return (0);
-	}
-	else if (len1 < len2)
+	if (len1 < len2)
 	{
 		return (-1);
+	}
+	else if (len1 == len2)
+	{
+		return (0);
 	}
 	else
 	{
