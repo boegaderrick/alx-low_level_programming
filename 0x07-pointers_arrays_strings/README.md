@@ -1,1 +1,1 @@
-alx-low_level_programming 0x07-pointers_arrays_strings project tasks
+alx-low _level_programming 0x07-pointers _arrays_strings project tasks
