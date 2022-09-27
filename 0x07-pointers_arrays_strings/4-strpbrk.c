@@ -25,7 +25,10 @@ char *_strpbrk(char *s, char *accept)
 
 				return (ptr);
 			}
-			
+			else
+			{
+				return (s + len);
+			}
 		}
 	}
 	return (s + len);
