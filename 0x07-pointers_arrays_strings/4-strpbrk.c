@@ -23,6 +23,6 @@ char *_strpbrk(char *s, char *accept)
 			}
 		}
 	}
-	i = i + 1;
+	i++;
 	return (s[i]);
 }
