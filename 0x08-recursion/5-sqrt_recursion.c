@@ -32,6 +32,6 @@ int _sqrt_recursion(int n)
 
 	divisor = 1;
 
-	result = squareroot(n, n);
+	result = squareroot(n, divisor);
 	return (result);
 }
