@@ -15,7 +15,7 @@ int squareroot(int n, int d)
 	}
 	if (n > d)
 	{
-		return (squareroot(n, d - 1));
+		return (squareroot(n, d + 1));
 	}
 	return (-1);
 }
