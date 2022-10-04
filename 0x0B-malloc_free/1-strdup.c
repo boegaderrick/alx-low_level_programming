@@ -11,6 +11,10 @@ int length(char *str)
 {
 	int len = 0, i;
 
+	if (str == NULL)
+	{
+		return (0);
+	}
 	for (i = 0; str[i] != '\0'; i++)
 	{
 		len++;
