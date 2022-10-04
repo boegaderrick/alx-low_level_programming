@@ -2,6 +2,23 @@
 #include <stdlib.h>
 
 /**
+* length - finds length of string
+* @str: subject string
+* Return: length of string
+*/
+
+int length(char *str)
+{
+	int len = 0, i;
+
+	for (i = 0; str[i] != '\0'; i++)
+	{
+		len++;
+	}
+	return (len);
+}
+
+/**
 * _strdup - creates and returns pointer to duplicate string
 * @str: string to be duplicated
 * Return: pointer to duplicate string or NULL if operation failed
@@ -9,18 +26,13 @@
 
 char *_strdup(char *str)
 {
-	int len = 0, i;
+	int i, len = length(str);
+	char *array = (char *)malloc(sizeof(char) * len);
 
 	if (str == NULL)
 	{
 		return (NULL);
 	}
-	for (i = 0; str[i] != '\0'; i++)
-	{
-		len++;
-	}
-	char *array = (char *)malloc(sizeof(char) * len);
-
 	if (array == NULL)
 	{
 		return (NULL);
