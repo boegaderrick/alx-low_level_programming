@@ -52,7 +52,7 @@ char *str_concat(char *s1, char *s2)
 			concat[i] = s1[i];
 		}
 	}
-	if (s1 != NULL)
+	if (s2 != NULL)
 	{
 		for (j = 0; s2[j] != '\0'; j++)
 		{
