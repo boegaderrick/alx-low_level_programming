@@ -11,11 +11,6 @@ int length(char *str)
 {
 	int len = 0, i;
 
-	if (str == NULL)
-	{
-		len = 0;
-		return (len);
-	}
 	for (i = 0; str[i] != '\0'; i++)
 	{
 		len++;
@@ -34,7 +29,7 @@ char *_strdup(char *str)
 	int i, len = length(str);
 	char *array = (char *)malloc(sizeof(char) * len);
 
-	if (len == 0)
+	if (str == 0)
 	{
 		return (NULL);
 	}
