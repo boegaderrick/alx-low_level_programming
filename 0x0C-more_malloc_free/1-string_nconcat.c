@@ -36,6 +36,11 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	unsigned int i, j, len;
 	char *array;
 
+	if (s1 == NULL && s2 == NULL)
+	{
+		return (NULL);
+	}
+
 	len = length(s1);
 	array = malloc(sizeof(char) * (len + n));
 
