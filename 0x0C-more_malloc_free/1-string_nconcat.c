@@ -62,7 +62,6 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 			i++;
 		}
 	}
-	i++;
 	array[i] = '\0';
 
 	return (array);
