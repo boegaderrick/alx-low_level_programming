@@ -12,12 +12,9 @@ unsigned int length(char *s1)
 {
 	unsigned int i, len = 0;
 
-	if (s1 != NULL)
+	for (i = 0; s1[i] != '\0'; i++)
 	{
-		for (i = 0; s1[i] != '\0'; i++)
-		{
-			len++;
-		}
+		len++;
 	}
 	len++;
 	return (len);
@@ -36,13 +33,13 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	unsigned int i = 0, j, len;
 	char *array;
 
-	if (s1 == NULL && s2 == NULL)
+	if (s1 == NULL)
 	{
-		return (NULL);
+		s1 = "";
 	}
-	if (n < 0)
+	if (s2 == NULL)
 	{
-		return (NULL);
+		s2 = "";
 	}
 	len = length(s1);
 	array = malloc(sizeof(char) * (len + n));
@@ -51,20 +48,14 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	{
 		return (NULL);
 	}
-	if (s1 != NULL)
+	for (i = 0; s1[i] != '\0'; i++)
 	{
-		for (i = 0; s1[i] != '\0'; i++)
-		{
-			array[i] = s1[i];
-		}
+		array[i] = s1[i];
 	}
-	if (s2 != NULL)
+	for (j = 0; j < n; j++)
 	{
-		for (j = 0; j < n; j++)
-		{
-			array[i] = s2[j];
-			i++;
-		}
+		array[i] = s2[j];
+		i++;
 	}
 	array[i] = '\0';
 
