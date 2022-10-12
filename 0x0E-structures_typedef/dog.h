@@ -6,6 +6,8 @@
 * @name: stores dog's name
 * @age: stores dog's age
 * @owner: stores owner's name
+*
+* Description: struct dog
 */
 
 struct dog
@@ -18,15 +20,11 @@ struct dog
 
 /**
 * typedef struct dog_t - dog info
-* dog_t - struct dog alias/type
 */
 
-typedef struct
+typedef struct dog dog_t;
 {
-	char *name;
-	float age;
-	char *owner;
-} dog_t;
+}
 
 
 void init_dog(struct dog *d, char *name, float age, char *owner);
