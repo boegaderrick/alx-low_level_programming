@@ -1,3 +1,5 @@
+#include "function_pointers.h"
+
 /**
 * array_iterator - executes function for each element of array
 * @array: subject array
