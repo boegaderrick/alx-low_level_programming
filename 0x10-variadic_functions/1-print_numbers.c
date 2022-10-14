@@ -10,13 +10,14 @@
 
 void print_numbers(const char *separator, const unsigned int n, ...)
 {
-	unsigned int i;
+	const unsigned int i;
 	int num;
 	va_list param;
 
+	va_start(param, n);
 	if (n > 0)
 	{
-		va_start(param, n);
+		/*va_start(param, n);*/
 
 		for (i = 0; i < n; i++)
 		{
