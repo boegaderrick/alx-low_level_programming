@@ -28,9 +28,12 @@ void print_strings(const char *separator, const unsigned int n, ...)
 			{
 				printf("%s", s);
 			}
-			if (separator != NULL && i <= (n - 2) && i > 1)
+			if (separator != NULL && i <= (n - 2))
 			{
-				printf("%s", separator);
+				if (i > 1)
+				{
+					printf("%s", separator);
+				}
 			}
 		}
 		va_end(strings);
