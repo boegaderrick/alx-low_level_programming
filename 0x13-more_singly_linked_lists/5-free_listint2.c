@@ -5,15 +5,19 @@
 * @head: double pointer to address of memory to be freed
 */
 
+
 void free_listint2(listint_t **head)
 {
-	listint_t *ptr = *head;
+	listint_t *ptr;
 
-	while (ptr->next != NULL)
+	if (head != NULL)
 	{
-		free(ptr);
-		ptr = ptr->next;
+		while ((*head) != NULL)
+		{
+			ptr = *head;
+			*head = (*head)->next;
+			free(ptr);
+		}
+		*head = NULL;
 	}
-	free(ptr);
-	*head = NULL;
 }
