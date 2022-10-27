@@ -27,7 +27,7 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 	{
 		while (ptr != NULL)
 		{
-			if (i == (index -1))
+			if (i == (index - 1))
 			{
 				swap = ptr;
 			}
@@ -40,8 +40,13 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 				break;
 			}
 			ptr = ptr->next;
-			i++;
+			if (ptr != NULL)
+			{
+				i++;
+			}
 		}
+		if (index > i)
+			return (-1);
 	}
 	return (1);
 }
