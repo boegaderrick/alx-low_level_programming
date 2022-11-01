@@ -5,8 +5,10 @@
 #include <stddef.h>
 
 /* FUNCTION PROTOTYPES */
+int _putchar(char c);
 unsigned int binary_to_uint(const char *);
 int _strlen(const char *b);
 int _pow(int num, int power);
+void print_binary(unsigned long int n);
 
 #endif /* MAIN_H */
