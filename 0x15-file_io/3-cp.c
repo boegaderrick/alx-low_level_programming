@@ -9,7 +9,7 @@
 int main(int argc, char **argv)
 {
 	int fd, fd1, read_count, close_val;
-	char *buffer;
+	char *buffer, *file_from, *file_to;
 
 	if (argc != 3)
 	{
@@ -17,19 +17,21 @@ int main(int argc, char **argv)
 		exit(97);
 	}
 
-	fd = open(argv[1], O_RDONLY);
+	file_from = argv[1];
+	fd = open(file_from, O_RDONLY);
 	if (fd < 0)
 	{
-		dprintf(2, "Error: Can't read from file %s\n", argv[1]);
+		dprintf(2, "Error: Can't read from file %s\n", file_from);
 		exit(98);
 	}
 	buffer = malloc(sizeof(char) * 1024);
 	read_count = read(fd, buffer, 1024);
 
-	fd1 = open(argv[2], O_CREAT | O_RDWR | O_TRUNC, 0664);
+	file_to = argv[2];
+	fd1 = open(file_to, O_CREAT | O_RDWR | O_TRUNC, 0664);
 	if (fd1 < 0)
 	{
-		dprintf(2, "Error: Cant't write to %s\n", argv[2]);
+		dprintf(2, "Error: Cant't write to %s\n", file_to);
 		exit(99);
 	}
 	write(fd1, buffer, read_count);
