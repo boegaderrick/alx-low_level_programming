@@ -8,7 +8,7 @@
 */
 int main(int argc, char **argv)
 {
-	int itr = 1024, fd, fd1, read_count, close_val;
+	int fd, fd1, read_count, close_val;
 	char *buffer[1024], *file_from, *file_to;
 
 	if (argc != 3)
@@ -30,11 +30,8 @@ int main(int argc, char **argv)
 		dprintf(STDERR_FILENO, "Error: Cant't write to %s\n", file_to);
 		exit(99);
 	}
-	while (itr == 1024)
-	{
-		read_count = read(fd, buffer, 1024);
-		write(fd1, buffer, read_count);
-	}
+	read_count = read(fd, buffer, 1024);
+	write(fd1, buffer, read_count);
 	close_val = close(fd);
 	if (close_val < 0)
 	{
