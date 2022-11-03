@@ -16,7 +16,6 @@ int main(int argc, char **argv)
 		dprintf(2, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
-
 	file_from = argv[1];
 	fd = open(file_from, O_RDONLY);
 	if (fd < 0)
