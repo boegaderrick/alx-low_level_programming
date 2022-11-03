@@ -8,8 +8,8 @@
 */
 int main(int argc, char **argv)
 {
-	int fd, fd1, read_count, close_val;
-	char *buffer, *file_from, *file_to;
+	int itr = 1024, fd, fd1, read_count, close_val;
+	char *buffer[1024], *file_from, *file_to;
 
 	if (argc != 3)
 	{
@@ -23,9 +23,6 @@ int main(int argc, char **argv)
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
 		exit(98);
 	}
-	buffer = malloc(sizeof(char) * 1024);
-	read_count = read(fd, buffer, 1024);
-
 	file_to = argv[2];
 	fd1 = open(file_to, O_CREAT | O_RDWR | O_TRUNC, 0664);
 	if (fd1 < 0)
@@ -33,7 +30,11 @@ int main(int argc, char **argv)
 		dprintf(STDERR_FILENO, "Error: Cant't write to %s\n", file_to);
 		exit(99);
 	}
-	write(fd1, buffer, read_count);
+	while (itr == 1024)
+	{
+		read_count = read(fd, buffer, 1024);
+		write(fd1, buffer, read_count);
+	}
 	close_val = close(fd);
 	if (close_val < 0)
 	{
@@ -46,6 +47,5 @@ int main(int argc, char **argv)
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd1);
 		exit(100);
 	}
-	free(buffer);
 	return (0);
 }
