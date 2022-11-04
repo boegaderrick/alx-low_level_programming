@@ -48,11 +48,11 @@ int main(int argc, char **argv)
 	checks(fd, 98, fd, file_from);
 	fd1 = open(file_to, O_CREAT | O_RDWR | O_TRUNC, 0664);
 	checks(fd1, 99, fd1, file_to);
+	read_count = read(fd1, buf, 1024);
+	if (read_count < 0)
+		return (0);
 	while (write_count == 1024)
 	{
-		read_count = read(fd1, buf, 1024);
-		if (read_count < 0)
-			break;
 		read_count = read(fd, buffer, 1024);
 		checks(read_count, 98, fd, file_from);
 		write_count = write(fd1, buffer, read_count);
