@@ -18,7 +18,8 @@ int main(int argc, char **argv)
 	}
 	file_from = argv[1];
 	fd = open(file_from, O_RDONLY);
-	if (fd < 0)
+	read_count = read(fd, buffer, 1024);
+	if (fd < 0 || read_count < 0)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
 		exit(98);
@@ -30,7 +31,6 @@ int main(int argc, char **argv)
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
 		exit(99);
 	}
-	read_count = read(fd, buffer, 1024);
 	write(fd1, buffer, read_count);
 	close_val = close(fd);
 	if (close_val < 0)
