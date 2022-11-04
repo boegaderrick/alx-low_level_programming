@@ -1,5 +1,28 @@
 #include "main.h"
 
+void checks(int ret, int error, int fd_value, char *file)
+{
+	if (ret < 0 && error == 98)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file);
+		exit(error);
+	}
+	if (ret < 0 && error == 99)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file);
+		exit(error);
+	}
+	if (ret < 0 && error == 100)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd_value);
+		exit(error);
+	}
+}
+
+
+
+
+
 /**
 * main - copies contents of one file to another
 * @argc: total number of arguments passed
@@ -8,7 +31,7 @@
 */
 int main(int argc, char **argv)
 {
-	int fd, fd1, read_count, close_val;
+	int fd, fd1, read_count, write_count = 1024, close_val;
 	char *buffer[1024], *file_from, *file_to;
 
 	if (argc != 3)
@@ -17,32 +40,29 @@ int main(int argc, char **argv)
 		exit(97);
 	}
 	file_from = argv[1];
-	fd = open(file_from, O_RDONLY);
-	read_count = read(fd, buffer, 1024);
-	if (fd < 0 || read_count < 0)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
-		exit(98);
-	}
 	file_to = argv[2];
+	fd = open(file_from, O_RDONLY);
+	checks(fd, 98, fd, file_from);
+	
+
 	fd1 = open(file_to, O_CREAT | O_RDWR | O_TRUNC, 0664);
-	if (fd1 < 0)
+	checks(fd1, 99, fd1, file_to);
+
+	while (write_count == 1024)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
-		exit(99);
+		read_count = read(fd, buffer, 1024);
+		checks(read_count, 98, fd, file_from);
+		write_count = write(fd1, buffer, read_count);
+		checks(write_count, 99, fd1, file_to);
 	}
-	write(fd1, buffer, read_count);
+
+
 	close_val = close(fd);
-	if (close_val < 0)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
-		exit(100);
-	}
+	checks(close_val, 100, fd, file_from);
+
 	close_val = close(fd1);
-	if (close_val < 0)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd1);
-		exit(100);
-	}
+	checks(close_val, 100, fd1, file_to);
+
+	
 	return (0);
 }
