@@ -35,7 +35,7 @@ void checks(int ret, int error, int fd_value, char *file)
 int main(int argc, char **argv)
 {
 	int fd, fd1, read_count, write_count = 1024, close_val;
-	char *buffer[1024], *buf[1024], *file_from, *file_to;
+	char *buffer[1024], *file_from, *file_to;
 
 	if (argc != 3)
 	{
@@ -49,8 +49,6 @@ int main(int argc, char **argv)
 	fd1 = open(file_to, O_CREAT | O_RDWR | O_TRUNC, 0664);
 	checks(fd1, 99, fd1, file_to);
 	read_count = read(fd1, buf, 1024);
-	if (read_count < 0)
-		return (0);
 	while (write_count == 1024)
 	{
 		read_count = read(fd, buffer, 1024);
