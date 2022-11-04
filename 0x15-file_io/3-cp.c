@@ -27,7 +27,7 @@ int main(int argc, char **argv)
 	fd1 = open(file_to, O_CREAT | O_RDWR | O_TRUNC, 0664);
 	if (fd1 < 0)
 	{
-		dprintf(STDERR_FILENO, "Error: Cant't write to %s\n", file_to);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
 		exit(99);
 	}
 	read_count = read(fd, buffer, 1024);
