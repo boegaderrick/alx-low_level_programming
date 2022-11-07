@@ -54,7 +54,7 @@ int main(int argc, char **argv)
 		read_count = read(fd, buffer, 1024);
 		checks(read_count, 98, fd, file_from);
 		write_count = write(fd1, buffer, read_count);
-		/*checks(write_count, 99, fd1, file_to);*/
+		checks(write_count, 99, fd1, file_to);
 	}
 	close_val = close(fd);
 	checks(close_val, 100, fd, file_from);
