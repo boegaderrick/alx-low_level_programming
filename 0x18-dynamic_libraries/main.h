@@ -1,7 +1,7 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-/* HEADER FILES */ 
+/* HEADER FILES */
 #include <stdlib.h>
 
 /* PROTOTYPES */
