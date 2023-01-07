@@ -12,7 +12,7 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	unsigned long int idx;
 	hash_node_t **array, *temp;
 
-	if (!ht || strlen(key) < 1)
+	if (!ht || !key || strlen(key) < 1)
 		return (NULL);
 	idx = key_index((unsigned char *)key, ht->size);
 	array = ht->array;
