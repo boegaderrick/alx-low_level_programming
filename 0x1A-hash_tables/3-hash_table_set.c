@@ -14,7 +14,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	unsigned long int size, idx;
 	char *new_value;
 
-	if (!ht || !key || !value || strlen(key))
+	if (!ht || !key || strlen(key))
 		return (0);
 	array = ht->array;
 	size = ht->size;
