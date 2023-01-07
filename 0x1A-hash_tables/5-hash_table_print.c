@@ -6,70 +6,31 @@
  */
 void hash_table_print(const hash_table_t *ht)
 {
-	hash_node_t **array, *temp;
-	unsigned long int i, count = 0, printed = 0;
+	hash_node_t *node;
+	unsigned long int i;
+	unsigned char comma_flag = 0;
 
-	array = ht->array;
-	if (ht && array)
-	{
-		count = get_count(ht);
-		printf("{");
-		for (i = 0; i < ht->size; i++)
-		{
-			if (!array[i])
-				continue;
-			if (array[i]->next)
-			{
-				temp = array[i];
-				while (temp)
-				{
-					printf("'%s': '%s'", temp->key, temp->value);
-					printed++;
-					if (printed < count || temp->next)
-						printf(", ");
-					temp = temp->next;
-				}
-			}
-			else
-			{
-				printf("'%s': '%s'", array[i]->key, array[i]->value);
-				printed++;
-				if (printed < count)
-					printf(", ");
-			}
-		}
-		printf("}\n");
-	}
-}
+	if (ht == NULL)
+		return;
 
-/**
- * get_count - gets count of all items in the hash table
- * @ht: hash table to be processed
- *
- * Return: count of all items
- */
-unsigned long int get_count(const hash_table_t *ht)
-{
-	hash_node_t **array, *temp;
-	unsigned long int i, count = 0;
-
-	array = ht->array;
+	printf("{");
 	for (i = 0; i < ht->size; i++)
 	{
-		if (array[i])
+		if (ht->array[i] != NULL)
 		{
-			if (array[i]->next)
+			if (comma_flag == 1)
+				printf(", ");
+
+			node = ht->array[i];
+			while (node != NULL)
 			{
-				temp = array[i];
-				while (temp)
-				{
-					count++;
-					temp = temp->next;
-				}
+				printf("'%s': '%s'", node->key, node->value);
+				node = node->next;
+				if (node != NULL)
+					printf(", ");
 			}
-			else
-				count++;
+			comma_flag = 1;
 		}
 	}
-	return (count);
+	printf("}\n");
 }
