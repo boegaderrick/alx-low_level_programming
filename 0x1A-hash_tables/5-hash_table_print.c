@@ -1,13 +1,18 @@
 #include "hash_tables.h"
 
+/**
+ * hash_table_print - prints contents of a hash table
+ * @ht: pointer to hash table to be printed
+ */
 void hash_table_print(const hash_table_t *ht)
 {
 	hash_node_t **array, *temp;
-	unsigned long int i;
+	unsigned long int i, count = 0, printed = 0;
 
 	array = ht->array;
-	if (array)
+	if (ht && array)
 	{
+		count = get_count(ht);
 		printf("{");
 		for (i = 0; i < ht->size; i++)
 		{
@@ -19,7 +24,8 @@ void hash_table_print(const hash_table_t *ht)
 				while (temp)
 				{
 					printf("'%s': '%s'", temp->key, temp->value);
-					if (temp->next || array[i + 1])
+					printed++;
+					if (printed < count || temp->next)
 						printf(", ");
 					temp = temp->next;
 				}
@@ -27,10 +33,43 @@ void hash_table_print(const hash_table_t *ht)
 			else
 			{
 				printf("'%s': '%s'", array[i]->key, array[i]->value);
-				if (array[i + 1])
+				printed++;
+				if (printed < count)
 					printf(", ");
 			}
 		}
 		printf("}\n");
 	}
+}
+
+/**
+ * get_count - gets count of all items in the hash table
+ * @ht: hash table to be processed
+ *
+ * Return: count of all items
+ */
+unsigned long int get_count(const hash_table_t *ht)
+{
+	hash_node_t **array, *temp;
+	unsigned long int i, count = 0;
+
+	array = ht->array;
+	for (i = 0; i < ht->size; i++)
+	{
+		if (array[i])
+		{
+			if (array[i]->next)
+			{
+				temp = array[i];
+				while (temp)
+				{
+					count++;
+					temp = temp->next;
+				}
+			}
+			else
+				count++;
+		}
+	}
+	return (count);
 }

@@ -10,17 +10,32 @@
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	hash_node_t *new_node, **array;
+	hash_node_t *new_node, **array, *temp;
 	unsigned long int size, idx;
+	char *new_value;
 
 	if (!strlen(key))
-		return (0);
-	new_node = create_node(key, value);
-	if (!new_node)
 		return (0);
 	array = ht->array;
 	size = ht->size;
 	idx = key_index((unsigned char *)key, size);
+	temp = array[idx];
+	while (temp)
+	{
+		if (strcmp(temp->key, key) == 0)
+		{
+			new_value = strdup(value);
+			if (!new_value)
+				return (0);
+			free(temp->value);
+			temp->value = new_value;
+			return (1);
+		}
+		temp = temp->next;
+	}
+	new_node = create_node(key, value);
+	if (!new_node)
+		return (0);
 	if (array[idx])
 	{
 		new_node->next = array[idx];
@@ -29,17 +44,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	else
 		array[idx] = new_node;
 	return (1);
-}
-
-/**
- * add_node - adds node to existing linked list in case there is a collision
- * @head: pointer to linked list already at position of conflict
- * @new_node: pointer to new node
- */
-void add_node(hash_node_t *head, hash_node_t *new_node)
-{
-	new_node->next = head;
-	head = new_node;
 }
 
 /**
@@ -56,21 +60,19 @@ hash_node_t *create_node(const char *key, const char *value)
 	new = malloc(sizeof(hash_node_t));
 	if (!new)
 		return (NULL);
-	new->key = malloc(sizeof(char) * strlen(key) + 1);
+	new->key = strdup(key);
 	if (!new->key)
 	{
 		free(new);
 		return (NULL);
 	}
-	new->value = malloc(sizeof(char) * strlen(value) + 1);
+	new->value = strdup(value);
 	if (!new->value)
 	{
 		free(new);
 		free(new->key);
 		return (NULL);
 	}
-	new->key = strdup(key);
-	new->value = strdup(value);
 	new->next = NULL;
 	return (new);
 }
