@@ -10,7 +10,7 @@ void hash_table_print(const hash_table_t *ht)
 	unsigned long int i, count = 0, printed = 0;
 
 	array = ht->array;
-	if (ht && array)
+	if (ht)
 	{
 		count = get_count(ht);
 		printf("{");
@@ -25,7 +25,6 @@ void hash_table_print(const hash_table_t *ht)
 				{
 					printf("'%s': '%s'", temp->key, temp->value);
 					printed++;
-					/*if (printed < count || temp->next)*/
 					if (printed < count)
 						printf(", ");
 					temp = temp->next;
