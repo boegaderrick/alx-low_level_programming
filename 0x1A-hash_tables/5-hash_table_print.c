@@ -59,17 +59,12 @@ unsigned long int get_count(const hash_table_t *ht)
 	{
 		if (array[i])
 		{
-			if (array[i]->next)
+			temp = array[i];
+			while (temp)
 			{
-				temp = array[i];
-				while (temp)
-				{
-					count++;
-					temp = temp->next;
-				}
-			}
-			else
 				count++;
+				temp = temp->next;
+			}
 		}
 	}
 	return (count);
