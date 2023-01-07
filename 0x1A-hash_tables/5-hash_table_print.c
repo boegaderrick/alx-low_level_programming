@@ -9,9 +9,9 @@ void hash_table_print(const hash_table_t *ht)
 	hash_node_t **array, *temp;
 	unsigned long int i, count = 0, printed = 0;
 
-	array = ht->array;
 	if (ht)
 	{
+		array = ht->array;
 		count = get_count(ht);
 		printf("{");
 		for (i = 0; i < ht->size; i++)
