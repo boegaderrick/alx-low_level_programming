@@ -4,14 +4,5 @@ SRC = main.c school.c
 all: $(SRC) m.h
 	$(CC) $(SRC) -o school
 
-school: main.o school.o
-	$(CC) main.o school.o -o school
-
-main.o: main.c m.h
-	$(CC) -c main.c
-
-school.o: school.c m.h
-	$(CC) -c school.c
-
-clean: school.o main.o school
-	rm school.o main.o school
+clean: school
+	rm school
