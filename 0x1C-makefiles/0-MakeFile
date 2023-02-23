@@ -1,14 +1,14 @@
 all: main.c school.c m.h
-	gcc main.c school.c -o school
+	cc main.c school.c -o school
 
 school: main.o school.o
-	gcc main.o school.o -o school
+	cc main.o school.o -o school
 
 main.o: main.c m.h
-	gcc -c main.c
+	cc -c main.c
 
 school.o: school.c m.h
-	gcc -c school.c
+	cc -c school.c
 
 clean: school.o main.o school
 	rm school.o main.o school
