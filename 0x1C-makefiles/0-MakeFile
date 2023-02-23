@@ -1,5 +1,5 @@
 # This is a makefile
-school: main.c school.c m.h
+school: main.c school.c
 	gcc main.c school.c -o school
 
 all: school
