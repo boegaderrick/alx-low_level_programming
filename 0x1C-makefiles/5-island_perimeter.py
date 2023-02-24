@@ -10,11 +10,11 @@ def island_perimeter(grid):
     Every valid cell (ones) is a square of side length 1
     """
     if type(grid) is not list:
-        return
+        return 0
     if len(grid) < 2:
-        return
+        return 0
     if not all(type(i) is list for i in grid):
-        return
+        return 0
 
     length = 0
     width = 1
