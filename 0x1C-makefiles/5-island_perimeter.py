@@ -19,15 +19,20 @@ def island_perimeter(grid):
     length = 0
     width = 1
     perimeter = 0
+    idx = 0
 
     for i in grid:
         for j in i:
             if type(j) is not int:
                 return 0
             if j == 1:
-                length += 1
+                if idx % 2 == 0:
+                    length += 1
+                else:
+                    width += 1
+        idx += 1
 
-    if length > 0:
+    if length > 0 or width > 1:
         perimeter = 2 * (length + width)
 
     return perimeter
