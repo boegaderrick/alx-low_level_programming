@@ -20,6 +20,16 @@ def island_perimeter(grid):
     width = 1
     perimeter = 0
 
+    if not all(type(i) is list for i in grid):
+        for i in grid:
+            if type(i) is not int:
+                return 0
+            if i > 0:
+                length += 1
+        if length > 0:
+            perimeter = 2 * (lenth + width)
+        return perimeter
+
     for i in grid:
         for j in i:
             if type(j) is not int:
