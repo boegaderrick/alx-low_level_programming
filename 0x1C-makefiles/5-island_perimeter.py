@@ -22,6 +22,8 @@ def island_perimeter(grid):
 
     for i in grid:
         for j in i:
+            if type(j) is not int:
+                return
             if j == 1:
                 length += 1
 
