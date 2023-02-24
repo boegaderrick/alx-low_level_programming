@@ -27,7 +27,7 @@ def island_perimeter(grid):
             if j == 1:
                 length += 1
 
-    if length > 0 and length < 101:
+    if length > 0:
         perimeter = 2 * (length + width)
 
     return perimeter
