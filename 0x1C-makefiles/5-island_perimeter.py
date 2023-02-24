@@ -1,0 +1,31 @@
+#!/usr/bin/python3
+"""This module contains a fuction that calculates the perimeter of an island"""
+
+
+def island_perimeter(grid):
+    """
+    This function calculates the perimeter of an island
+    Grid is a matrix of zeros and ones
+    One represents land area and zero represents water area
+    Every valid cell (ones) is a square of side length 1
+    """
+    if type(grid) is not list:
+        return
+    if len(grid) < 2:
+        return
+    if not all(type(i) is list for i in grid):
+        return
+
+    length = 0
+    width = 1
+    perimeter = 0
+
+    for i in grid:
+        for j in i:
+            if j > 0:
+                length += 1
+
+    if length > 0:
+        perimeter = 2 * (length + width)
+
+    return perimeter
