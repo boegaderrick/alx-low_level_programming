@@ -9,12 +9,12 @@ def island_perimeter(grid):
     One represents land area and zero represents water area
     Every valid cell (ones) is a square of side length 1
     """
-    if type(grid) is not list:
+    """if type(grid) is not list:
         return 0
     if len(grid) < 2:
         return 0
     if not all(type(i) is list for i in grid):
-        return 0
+        return 0"""
 
     length = 0
     width = 1
