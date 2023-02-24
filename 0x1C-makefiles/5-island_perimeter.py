@@ -22,7 +22,7 @@ def island_perimeter(grid):
 
     for i in grid:
         for j in i:
-            if j > 0:
+            if j == 1:
                 length += 1
 
     if length > 0:
