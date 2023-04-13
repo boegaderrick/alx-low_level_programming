@@ -17,7 +17,8 @@ void helper(int *array, int size, int value, int low, int high, int *idx)
 	{
 		/*pos = low + ((value - array[low]) * (high - low)) / (*/
 				/*array[high] - array[low]);*/
-		pos = low + (((double)(high - low) / (array[high] - array[low])) * (value - array[low]));
+		pos = low + (((double)(high - low) / (array[high] - array[low])) * (
+					value - array[low]));
 
 		if (pos < size)
 			printf("Value checked array[%d] = [%d]\n", pos, array[pos]);
