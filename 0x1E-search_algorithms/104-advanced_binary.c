@@ -15,7 +15,8 @@ void helper(int *array, int value, int size, int *idx, int low, int high)
 
 	/*if (*idx != -1)*/
 	/*	return;*/
-	if (high >= low)
+	mid = low + ((high - low) / 2);
+	if (high - low > 0)
 	{
 		printf("Searching in array: ");
 		for (i = low; i <= high; i++)
@@ -26,12 +27,12 @@ void helper(int *array, int value, int size, int *idx, int low, int high)
 			else
 				printf("\n");
 		}
-		mid = low + ((high - low) / 2);
+		/*mid = low + ((high - low) / 2);*/
 		if (array[mid] == value)
 		{
 			*idx = mid;
 			if (array[mid - 1] == value)
-				helper(array, value, size, idx, low, mid - 1);
+				helper(array, value, size, idx, low, mid);
 			return;
 		}
 		if (array[mid] > value)
@@ -39,6 +40,8 @@ void helper(int *array, int value, int size, int *idx, int low, int high)
 		else
 			helper(array, value, size, idx, mid + 1, high);
 	}
+	if (array[mid] == value)
+		*idx = mid;
 }
 
 /**
