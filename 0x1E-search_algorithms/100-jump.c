@@ -31,10 +31,19 @@ void helper(int *array, int low, int high, int value, int size, int *idx)
 		printf("Value checked array[%d] = [%d]\n", high, array[high]);
 		helper(array, high, high + diff, value, size, idx);
 	}
-	else
+	else if (low <= size)
 	{
 		printf("Value found between indexes [%d] and [%d]\n", low, high);
-		printf("Value checked array[%d] = [%d]\n", low, array[low]);
+		while (low <= size)
+		{
+			printf("Value checked array[%d] = [%d]\n", low, array[low]);
+			if (array[low] == value)
+			{
+				*idx = low;
+				return;
+			}
+			low++;
+		}
 	}
 }
 
