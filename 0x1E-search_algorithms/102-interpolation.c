@@ -55,6 +55,9 @@ int interpolation_search(int *array, size_t size, int value)
 {
 	int idx = -1;
 
+	if (array == NULL)
+		return (idx);
+
 	helper(array, size, value, 0, size - 1, &idx);
 	return (idx);
 }
