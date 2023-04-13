@@ -29,9 +29,9 @@ void helper(int *array, int value, int size, int *idx, int low, int high)
 		mid = low + ((high - low) / 2);
 		if (array[mid] == value)
 		{
-			while (mid > 0 && array[mid - 1] == value)
-				mid--;
 			*idx = mid;
+			if (array[mid - 1] == value)
+				helper(array, value, size, idx, low, mid - 1);
 			return;
 		}
 		if (array[mid] > value)
