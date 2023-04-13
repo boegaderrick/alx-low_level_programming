@@ -26,6 +26,8 @@ void helper(int *array, int size, int value, int low, int high, int *idx)
 		}
 		if (array[pos] == value)
 		{
+			while (array[pos - 1] == value)
+				pos--;
 			*idx = pos;
 			return;
 		}
