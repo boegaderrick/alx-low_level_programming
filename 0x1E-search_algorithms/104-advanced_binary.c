@@ -16,18 +16,17 @@ void helper(int *array, int value, int size, int *idx, int low, int high)
 	/*if (*idx != -1)*/
 	/*	return;*/
 	mid = low + ((high - low) / 2);
+	printf("Searching in array: ");
+	for (i = low; i <= high; i++)
+	{
+		printf("%d", array[i]);
+		if (i < high)
+			printf(", ");
+		else
+			printf("\n");
+	}
 	if (high - low > 0)
 	{
-		printf("Searching in array: ");
-		for (i = low; i <= high; i++)
-		{
-			printf("%d", array[i]);
-			if (i < high)
-				printf(", ");
-			else
-				printf("\n");
-		}
-		/*mid = low + ((high - low) / 2);*/
 		if (array[mid] == value)
 		{
 			*idx = mid;
