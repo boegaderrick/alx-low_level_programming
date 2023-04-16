@@ -35,7 +35,7 @@ void helper(int *array, int value, int size, int *idx, int low, int high)
 			return;
 		}
 		if (array[mid] > value)
-			helper(array, value, size, idx, low, mid - 1);
+			helper(array, value, size, idx, low, mid);
 		else
 			helper(array, value, size, idx, mid + 1, high);
 	}
